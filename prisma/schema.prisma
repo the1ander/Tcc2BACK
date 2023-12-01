@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Fungos {
+  id_fungo     Int       @id @default(autoincrement())
+  url_foto     String
+  filo         String
+  subfilo      String
+  classe       String
+  ordem        String
+  familia      String
+  genero       String
+  basidioma    String?
+  morfologia   String
+  habitat      String
+  propriedades String?
+  observacoes  String?
+  
+  @@map("fungos")
+}
