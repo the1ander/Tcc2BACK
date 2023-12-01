@@ -29,7 +29,7 @@ export class FungosService{
         return this.prisma.fungos.findMany();
     }
     findbyID(id_fungo: number){
-      return this.prisma.fungos.findMany({
+      return this.prisma.fungos.findUnique({
         where: {
           id_fungo: id_fungo
         }
