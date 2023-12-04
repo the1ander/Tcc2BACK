@@ -34,6 +34,13 @@ export class FungosService{
           id_fungo: id_fungo
         }
       });
-    }
-}
+      }
+      delete(id_fungo:number){
+        return this.prisma.fungos.delete({
+      where: {
+        id_fungo:id_fungo
+      }
+        });
+      }
+} 
 
